@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f4f6;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+    gap: 25px;
+
+    align-items: flex-start;
+}
+
+
+/* =========================
+   BOOKING FORM
+   ========================= */
+
+.billing-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    width: 50%;
+
+    border: 1px solid #ddd;
+}
+
+
+/* Heading */
+
+.billing-card > h1 {
+    text-align: center;
+
+    color: #333;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Description */
+
+.billing-card > p {
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Form fields */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #667eea;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+
+/* Calculate button */
+
+button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #667eea;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5568d9;
+}
+
+
+/* =========================
+   BILL
+   ========================= */
+
+.bill-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    width: 50%;
+
+    border: 1px solid #ddd;
+
+    display: block;
+}
+
+
+/* Bill heading */
+
+.bill-card h2 {
+    color: #333;
+
+    font-size: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Bill Header + Rows */
+
+.bill-header,
+.bill-row {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        0.6fr
+        0.8fr
+        1.2fr;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* Column headings */
+
+.bill-header {
+    padding: 10px 0;
+
+    color: #777;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Bill rows */
+
+.bill-row {
+    padding: 11px 0;
+
+    border-bottom: 1px solid #eee;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+
+/* Align numbers to right */
+
+.bill-row span:not(:first-child),
+.bill-header span:not(:first-child) {
+    text-align: right;
+}
+
+
+/* Amount */
+
+.bill-row span:last-child {
+    color: #333;
+
+    font-weight: bold;
+}
+
+
+/* Horizontal line */
+
+.bill-card hr {
+    border: none;
+
+    border-top: 1px solid #ccc;
+
+    margin: 15px 0;
+}
+
+
+/* Total */
+
+.bill-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    padding-top: 10px;
+}
+
+.bill-total span:last-child {
+    color: #667eea;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .billing-card,
+    .bill-card {
+        width: 100%;
+    }
+
+    .bill-card {
+        overflow-x: auto;
+    }
+
+    .bill-header,
+    .bill-row {
+        min-width: 430px;
+    }
+}
+
+#serviceChargeRow {
+    color: #555; 
+}
+
+#serviceCharge {
+    color: #333;
+    font-weight: bold;
+}

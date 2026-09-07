@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hotel Room Billing System</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Booking Form -->
+      <div class="billing-card">
+        <h1>Hotel Room Billing</h1>
+        <p>Enter room booking details</p>
+
+        <form id="calBill">
+          <div class="form-group">
+            <label for="standard">Standard Rooms</label>
+            <input
+              type="number"
+              id="standard"
+              min="0"
+              placeholder="Number of rooms"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="deluxe">Deluxe Rooms</label>
+            <input
+              type="number"
+              id="deluxe"
+              min="0"
+              placeholder="Number of rooms"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="suite">Suite Rooms</label>
+            <input
+              type="number"
+              id="suite"
+              min="0"
+              placeholder="Number of rooms"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="nights">Number of Nights</label>
+            <input
+              type="number"
+              id="nights"
+              min="1"
+              placeholder="Number of nights"
+            />
+          </div>
+
+          <button type="submit">Calculate Bill</button>
+        </form>
+      </div>
+
+      <!-- Bill -->
+      <div class="bill-card" id="bill">
+        <h2>Bill Summary</h2>
+
+        <div class="bill-header">
+          <span>Room</span>
+          <span>Price</span>
+          <span>Qty</span>
+          <span>Nights</span>
+          <span>Amount</span>
+        </div>
+
+        <div class="bill-row">
+          <span>Standard</span>
+          <span>₹2,000</span>
+          <span id="standardCount">-</span>
+          <span id="standardNights">-</span>
+          <span id="standardAmount">₹0</span>
+        </div>
+
+        <div class="bill-row">
+          <span>Deluxe</span>
+          <span>₹3,000</span>
+          <span id="deluxeCount">-</span>
+          <span id="deluxeNights">-</span>
+          <span id="deluxeAmount">₹0</span>
+        </div>
+
+        <div class="bill-row">
+          <span>Suite</span>
+          <span>₹5,000</span>
+          <span id="suiteCount">-</span>
+          <span id="suiteNights">-</span>
+          <span id="suiteAmount">₹0</span>
+        </div>
+
+        <hr />
+
+        <div class="bill-row">
+          <span>Room Charges</span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span id="roomCharges">₹0</span>
+        </div>
+
+        <div class="bill-row" id="discountRow" style="display: none;">
+          <span>Discount</span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span id="discount">₹0</span>
+        </div>
+
+        <div class="bill-row" id="serviceChargeRow" style="display: none;">
+          <span>Service Charge</span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span id="serviceCharge">₹0</span>
+        </div>
+
+        <div class="bill-row">
+          <span>GST</span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span id="gst">₹0</span>
+        </div>
+
+        <div class="bill-total">
+          <span>Total Amount</span>
+          <span id="totalAmount">₹0</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
