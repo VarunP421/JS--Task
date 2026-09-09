@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hotel Admin Panel</title>
+
+    <link rel="stylesheet" href="Styles/admin.css" />
+    <script src="Scripts/app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="admin-card">
+        <h1>Hotel Admin Panel</h1>
+        <p class="subtitle">Manage room count and pricing</p>
+
+        <form id="admForm">
+          <!-- Standard Room -->
+          <div class="room-card">
+            <h2>Standard Room</h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="standardCount">Room Count</label>
+                <input
+                  type="number"
+                  id="standardCount"
+                  min="0"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="standardPrice">Price Per Night (₹)</label>
+                <input
+                  type="number"
+                  id="standardPrice"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Deluxe Room -->
+          <div class="room-card">
+            <h2>Deluxe Room</h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="deluxeCount">Room Count</label>
+                <input
+                  type="number"
+                  id="deluxeCount"
+                  min="0"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="deluxePrice">Price Per Night (₹)</label>
+                <input
+                  type="number"
+                  id="deluxePrice"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Suite Room -->
+          <div class="room-card">
+            <h2>Suite Room</h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="suiteCount">Room Count</label>
+                <input
+                  type="number"
+                  id="suiteCount"
+                  min="0"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="suitePrice">Price Per Night (₹)</label>
+                <input
+                  type="number"
+                  id="suitePrice"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="submit" class="save-btn">
+              Save Changes
+            </button>
+
+            <a href="index.html" class="back-btn">
+              Back to Billing
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

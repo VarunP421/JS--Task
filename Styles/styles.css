@@ -303,3 +303,11 @@ button:hover {
     color: #333;
     font-weight: bold;
 }
+.admin-btn {
+    margin-top: 12px;
+    background: #333;
+}
+
+.admin-btn:hover {
+    background: #222;
+}
