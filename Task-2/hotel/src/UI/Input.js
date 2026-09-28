@@ -7,6 +7,7 @@ const Input = (props) => {
                 {props.label}
             </label>
             <input
+                name={props.id}
                 className={classes.input}
                 type={props.type}
                 id={props.id}

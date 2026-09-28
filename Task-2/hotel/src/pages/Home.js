@@ -15,11 +15,18 @@ export default function HomePage() {
     });
 
     const [billData, setBillData] = useState({
+        stdRoomCount:0,
+        delRoomCount:0,
+        suiteRoomCount:0,
+        stdRoomAmount:0,
+        delRoomAmount:0,
+        suiteRoomAmount:0,
         roomCharges: 0,
         discount: 0,
         serviceCharge: false,
         gstAmt: 0,
         totalBill: 0,
+        nights:0
     });
 
     const submitFormHandler = (data) => {
@@ -62,14 +69,16 @@ export default function HomePage() {
 
         let totalBill = 0;
 
-        totalBill += stdRoomCnt * roomData.standardRoomPrice * nights;
+        const stdRoomAmt = stdRoomCnt * roomData.standardRoomPrice * nights;
         const newStdAvailable = roomData.standardRoomAvailable - stdRoomCnt;
 
-        totalBill += delRoomCnt * roomData.deluxeRoomPrice * nights;
+        const delRoomAmt = delRoomCnt * roomData.deluxeRoomPrice * nights;
         const newDelAvailable = roomData.deluxeRoomAvailable - delRoomCnt;
 
-        totalBill += suiteRoomCnt * roomData.suiteRoomPrice * nights;
+        const suiteRoomAmt = suiteRoomCnt * roomData.suiteRoomPrice * nights;
         const newSuiteAvailable = roomData.suiteRoomAvailable - suiteRoomCnt;
+
+        totalBill = stdRoomAmt + delRoomAmt + suiteRoomAmt
 
         let roomCharges = totalBill;
 
@@ -101,11 +110,19 @@ export default function HomePage() {
         }));
 
         setBillData({
+            stdRoomCount:stdRoomCnt,
+            delRoomCount:delRoomCnt,
+            suiteRoomCount:suiteRoomCnt,
+            stdRoomAmount:stdRoomAmt,
+            delRoomAmount:delRoomAmt,
+            suiteRoomAmount:suiteRoomAmt,
             roomCharges: roomCharges,
             discount: discount,
             serviceCharge: serviceCharge,
             gstAmt: gstAmt,
             totalBill: totalBill,
+            nights:nights
+
         });
     };
     return (

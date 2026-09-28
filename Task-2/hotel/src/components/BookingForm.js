@@ -1,9 +1,19 @@
-import { useState } from 'react';
 import Input from '../UI/Input';
 import classes from './BookingForm.module.css'
 
-const BookingForm = () => {
+const BookingForm = (props) => {
 
+    const formSubmitHandler = (e) => {
+        e.preventDefault()
+        const formdata = new FormData(e.target)
+        const data = {
+            standardRoomCount:formdata.get('standard'),
+            deluxeRoomCount:formdata.get('deluxe'),
+            suiteRoomCount:formdata.get('suite'),
+            noOfNights:formdata.get('nights')
+        }
+        props.onSubmit(data)
+    }
 
 
    return (
@@ -11,7 +21,7 @@ const BookingForm = () => {
             <h1 className={classes.h1}>Hotel Room Billing</h1>
             <p className={classes.p}>Enter room booking details</p>
 
-            <form id="calBill">
+            <form id="calBill" onSubmit={formSubmitHandler}>
                 <Input id='standard' type='number' min='0' placeholder="Number of rooms" label='Standard Rooms' />
 
                 <Input id='deluxe' type='number' min='0' placeholder="Number of rooms" label='Deluxe Rooms' />
