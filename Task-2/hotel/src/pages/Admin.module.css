@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.adminCard {
+    width: 100%;
+    padding: 30px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Heading */
+
+.adminCard h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+    font-size: 26px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Room Card */
+
+.roomCard {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.roomCard h2 {
+    margin-bottom: 18px;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Form */
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.formGroup input:focus {
+    border-color: #667eea;
+}
+
+/* Buttons */
+
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.saveBtn,
+.backBtn {
+    flex: 1;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.saveBtn {
+    background-color: #667eea;
+    color: white;
+}
+
+.saveBtn:hover {
+    background-color: #5568d9;
+}
+
+.backBtn {
+    background-color: #333;
+    color: white;
+}
+
+.backBtn:hover {
+    background-color: #222;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .adminCard {
+        padding: 20px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+    }
+}

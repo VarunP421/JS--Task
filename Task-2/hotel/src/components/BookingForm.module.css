@@ -1,0 +1,65 @@
+.billingCard {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    width: 100%;
+
+    border: 1px solid #ddd;
+
+    box-sizing: border-box;
+}
+
+/* Heading */
+
+.h1 {
+    text-align: center;
+
+    color: #333;
+
+    font-size: 25px;
+
+    margin-bottom: 12px;
+}
+
+/* Description */
+
+.p {
+    text-align: center;
+
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 35px;
+}
+
+/* Calculate button */
+
+button {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #667eea;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5568d9;
+}
