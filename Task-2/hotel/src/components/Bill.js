@@ -1,3 +1,4 @@
+import BillRow from "../UI/BillRow";
 import styles from "./Bill.module.css";
 
 const Bill = (props) => {
@@ -17,39 +18,33 @@ const Bill = (props) => {
                         </div>
 
                         {props.data.stdRoomAmount > 0 && (
-                            <div className={styles.billRow}>
-                                <span>Standard</span>
-                                <span>₹{props.data.stdRoomPrice}</span>
-                                <span>{props.data.stdRoomCount}</span>
-                                <span>{props.data.nights}</span>
-                                <span className={styles.roomAmount}>
-                                    ₹{props.data.stdRoomAmount}
-                                </span>
-                            </div>
+                            <BillRow
+                                name="Standard"
+                                price={props.data.stdRoomPrice}
+                                count={props.data.stdRoomCount}
+                                nights={props.data.nights}
+                                amount={props.data.stdRoomAmount}
+                            />
                         )}
 
                         {props.data.delRoomAmount > 0 && (
-                            <div className={styles.billRow}>
-                                <span>Deluxe</span>
-                                <span>₹{props.data.delRoomPrice}</span>
-                                <span>{props.data.delRoomCount}</span>
-                                <span>{props.data.nights}</span>
-                                <span className={styles.roomAmount}>
-                                    ₹{props.data.delRoomAmount}
-                                </span>
-                            </div>
+                            <BillRow
+                                name="Deluxe"
+                                price={props.data.delRoomPrice}
+                                count={props.data.delRoomCount}
+                                nights={props.data.nights}
+                                amount={props.data.delRoomAmount}
+                            />
                         )}
 
                         {props.data.suiteRoomAmount > 0 && (
-                            <div className={styles.billRow}>
-                                <span>Suite</span>
-                                <span>₹{props.data.suiteRoomPrice}</span>
-                                <span>{props.data.suiteRoomCount}</span>
-                                <span>{props.data.nights}</span>
-                                <span className={styles.roomAmount}>
-                                    ₹{props.data.suiteRoomAmount}
-                                </span>
-                            </div>
+                            <BillRow
+                                name="Suite"
+                                price={props.data.suiteRoomPrice}
+                                count={props.data.suiteRoomCount}
+                                nights={props.data.nights}
+                                amount={props.data.suiteRoomAmount}
+                            />
                         )}
 
                         <hr />
