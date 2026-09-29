@@ -11,20 +11,22 @@
 .billCard h2 {
     color: #333;
     font-size: 22px;
-    margin-bottom: 20px;
+    margin: 0 0 20px 0;
 }
+
+/* =========================
+   HEADER & ROW
+   ========================= */
 
 .billHeader,
 .billRow {
     display: grid;
-
     grid-template-columns:
         1.5fr
         1fr
         0.6fr
         0.8fr
         1.2fr;
-
     align-items: center;
     gap: 8px;
 }
@@ -44,21 +46,107 @@
     font-size: 13px;
 }
 
-.billRow span:not(:first-child),
-.billHeader span:not(:first-child) {
+/* Align numeric columns to right */
+.billHeader span:not(:first-child),
+.billRow span:not(:first-child) {
     text-align: right;
 }
 
-.billRow span:last-child {
-    color: #333;
-    font-weight: bold;
+/* =========================
+   ROOM AMOUNTS
+   ========================= */
+
+.roomAmount {
+    color: #333 !important;
+    font-weight: 600 !important;
 }
+
+/* =========================
+   SEPARATOR
+   ========================= */
 
 .billCard hr {
     border: none;
     border-top: 1px solid #ccc;
     margin: 15px 0;
 }
+
+/* =========================
+   ROOM CHARGES
+   ========================= */
+
+.summaryRow {
+    color: #333 !important;
+    font-weight: 500;
+}
+
+.summaryRow span:first-child {
+    color: #333 !important;
+    font-weight: 600 !important;
+}
+
+.summaryAmount {
+    color: #333 !important;
+    font-weight: 700 !important;
+}
+
+/* =========================
+   DISCOUNT
+   ========================= */
+
+.discountRow {
+    color: #d9534f !important;
+}
+
+.discountRow span:first-child {
+    color: #d9534f !important;
+    font-weight: 600 !important;
+}
+
+.discountAmount {
+    color: #d9534f !important;
+    font-weight: 700 !important;
+}
+
+/* =========================
+   SERVICE CHARGE
+   ========================= */
+
+.serviceChargeRow {
+    color: #555 !important;
+}
+
+.serviceChargeRow span:first-child {
+    color: #555 !important;
+    font-weight: 500 !important;
+}
+
+.serviceChargeAmount {
+    color: #333 !important;
+    font-weight: 700 !important;
+}
+
+/* =========================
+   GST
+   ========================= */
+
+.gstRow {
+    color: #555 !important;
+}
+
+.gstRow span:first-child {
+    color: #555 !important;
+    font-weight: 500 !important;
+}
+
+.gstAmount {
+    color: #333 !important;
+    font-weight: 700 !important;
+}
+
+/* =========================
+   TOTAL
+   ========================= */
 
 .billTotal {
     display: flex;
@@ -69,21 +157,21 @@
     font-weight: bold;
     color: #333;
 
-    padding-top: 10px;
+    padding-top: 15px;
+}
+
+.billTotal span:first-child {
+    color: #333;
 }
 
 .billTotal span:last-child {
     color: #667eea;
+    font-weight: 700;
 }
 
-.serviceChargeRow {
-    color: #555;
-}
-
-.serviceCharge {
-    color: #333;
-    font-weight: bold;
-}
+/* =========================
+   ADMIN BUTTON
+   ========================= */
 
 .adminBtn {
     margin-top: 12px;

@@ -1,14 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import AdminPage from "./pages/Admin";
 import HomePage from "./pages/Home";
+import { RoomDataContext } from "./context/DataContext";
 
 export default function App() {
     return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/admin" element={<AdminPage />} />
-            </Routes>
+            <RoomDataContext>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/admin" element={<AdminPage />} />
+                </Routes>
+            </RoomDataContext>
         </BrowserRouter>
     );
 }

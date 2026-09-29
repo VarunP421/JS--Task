@@ -1,9 +1,27 @@
 import { useNavigate } from "react-router";
 import Header from "../components/Header";
 import classes from "./Admin.module.css";
+import { useContext, useRef } from "react";
+import { RoomDataCtx } from "../context/DataContext";
 
 export default function AdminPage() {
     const navigate = useNavigate();
+    const {roomData, updateRoomConfig } = useContext(RoomDataCtx);
+    const prevVal = useRef(roomData)
+    const submitHandler = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = {
+            standardRoomAvailable: formData.get('stdRoomAvailable'),
+            deluxeRoomAvailable: formData.get('delRoomAvailable'),
+            suiteRoomAvailable: formData.get('suiteRoomAvailable'),
+            standardRoomPrice: formData.get('stdRoomPrice'),
+            deluxeRoomPrice: formData.get('delRoomPrice'),
+            suiteRoomPrice: formData.get('suiteRoomPrice'),
+        };
+        updateRoomConfig(data);
+        navigate('/')
+    };
 
     return (
         <>
@@ -15,7 +33,7 @@ export default function AdminPage() {
                         Manage room count and pricing
                     </p>
 
-                    <form id="admForm">
+                    <form id="admForm" onSubmit={submitHandler}>
                         <div className={classes.roomCard}>
                             <h2>Standard Room</h2>
 
@@ -28,6 +46,8 @@ export default function AdminPage() {
                                         type="number"
                                         id="standardCount"
                                         min="0"
+                                        name="stdRoomAvailable"
+                                        defaultValue={prevVal.current.standardRoomAvailable}
                                     />
                                 </div>
 
@@ -39,6 +59,8 @@ export default function AdminPage() {
                                         type="number"
                                         id="standardPrice"
                                         min="0"
+                                        name="stdRoomPrice"
+                                        defaultValue={prevVal.current.standardRoomPrice}
                                     />
                                 </div>
                             </div>
@@ -56,6 +78,8 @@ export default function AdminPage() {
                                         type="number"
                                         id="deluxeCount"
                                         min="0"
+                                        name="delRoomAvailable"
+                                        defaultValue={prevVal.current.deluxeRoomAvailable}
                                     />
                                 </div>
 
@@ -67,6 +91,8 @@ export default function AdminPage() {
                                         type="number"
                                         id="deluxePrice"
                                         min="0"
+                                        name="delRoomPrice"
+                                        defaultValue={prevVal.current.deluxeRoomPrice}
                                     />
                                 </div>
                             </div>
@@ -84,6 +110,8 @@ export default function AdminPage() {
                                         type="number"
                                         id="suiteCount"
                                         min="0"
+                                        name="suiteRoomAvailable"
+                                        defaultValue={prevVal.current.suiteRoomAvailable}
                                     />
                                 </div>
 
@@ -95,6 +123,8 @@ export default function AdminPage() {
                                         type="number"
                                         id="suitePrice"
                                         min="0"
+                                        name="suiteRoomPrice"
+                                        defaultValue={prevVal.current.suiteRoomPrice}
                                     />
                                 </div>
                             </div>

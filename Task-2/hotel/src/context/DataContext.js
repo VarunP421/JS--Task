@@ -1,12 +1,55 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-const DataContext = createContext({
-    standardRoomCount:0,
-    deluxeRoomCount:0,
-    suiteRoomCount:0,
-    standardRoomPrice:0,
-    deluxeRoomPrice:0,
-    suiteRoomPrice:0
-})
+const RoomDataCtx = createContext({
+    roomData: {
+        standardRoomAvailable: 15,
+        deluxeRoomAvailable: 15,
+        suiteRoomAvailable: 15,
+        standardRoomPrice: 2000,
+        deluxeRoomPrice: 3500,
+        suiteRoomPrice: 6000,
+    },
+    updateRoomConfig: () => {},
+    updateRoomAvailability: () => {},
+});
 
-export default DataContext
+const RoomDataContext = (props) => {
+    const [roomData, setRoomData] = useState({
+        standardRoomAvailable: 15,
+        deluxeRoomAvailable: 15,
+        suiteRoomAvailable: 15,
+        standardRoomPrice: 2000,
+        deluxeRoomPrice: 3500,
+        suiteRoomPrice: 6000,
+    });
+
+    const updateRoomConfig = (updatedData) => {
+        setRoomData((prev) => ({
+            ...prev,
+            ...updatedData,
+        }));
+    };
+
+    const updateRoomAvailability = (
+        newStdAvailable,
+        newDelAvailable,
+        newSuiteAvailable,
+    ) => {
+        setRoomData((prev) => ({
+            ...prev,
+            standardRoomAvailable: newStdAvailable,
+            deluxeRoomAvailable: newDelAvailable,
+            suiteRoomAvailable: newSuiteAvailable,
+        }));
+    };
+
+    return (
+        <RoomDataCtx.Provider
+            value={{ roomData, updateRoomConfig, updateRoomAvailability }}
+        >
+            {props.children}
+        </RoomDataCtx.Provider>
+    );
+};
+
+export { RoomDataCtx, RoomDataContext };
