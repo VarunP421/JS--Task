@@ -1,4 +1,4 @@
-import Input from '../UI/Input';
+import Input from '../../UI/Input/Input';
 import classes from './BookingForm.module.css'
 
 const BookingForm = (props) => {
@@ -22,13 +22,13 @@ const BookingForm = (props) => {
             <p className={classes.p}>Enter room booking details</p>
 
             <form id="calBill" onSubmit={formSubmitHandler}>
-                <Input id='standard' type='number' min='0' placeholder="Number of rooms" label='Standard Rooms' />
+                <Input name='standard' type='number' min='0' placeholder="Number of rooms" label='Standard Rooms' />
 
-                <Input id='deluxe' type='number' min='0' placeholder="Number of rooms" label='Deluxe Rooms' />
+                <Input name='deluxe' type='number' min='0' placeholder="Number of rooms" label='Deluxe Rooms' />
 
-                <Input id='suite' type='number' min='0' placeholder="Number of rooms" label='Suite Rooms' />
+                <Input name='suite' type='number' min='0' placeholder="Number of rooms" label='Suite Rooms' />
 
-                <Input id='nights' type='number' min='1' placeholder="Number of Nights" label='Number of Nights' />
+                <Input name='nights' type='number' min='1' placeholder="Number of Nights" label='Number of Nights' />
 
                 <button type="submit">Calculate Bill</button>
 

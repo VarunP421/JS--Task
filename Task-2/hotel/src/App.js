@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import AdminPage from "./pages/Admin";
-import HomePage from "./pages/Home";
+import AdminPage from "./pages/Admin/Admin";
+import HomePage from "./pages/Home/Home";
 import { RoomDataContext } from "./context/DataContext";
 
 export default function App() {

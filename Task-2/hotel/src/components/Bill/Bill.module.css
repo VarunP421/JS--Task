@@ -1,0 +1,215 @@
+.billCard {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    padding: 30px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    display: block;
+}
+
+.billCard h2 {
+    margin: 0 0 20px;
+
+    color: #333;
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+
+/* =========================
+   BILL HEADER
+========================= */
+
+.billHeader,
+.billRow {
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        0.6fr
+        0.8fr
+        1.2fr;
+
+    align-items: center;
+    gap: 8px;
+}
+
+.billHeader {
+    padding: 10px 0;
+
+    color: #777;
+    font-size: 18px;
+    font-weight: 700;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.billHeader span:not(:first-child),
+.billRow span:not(:first-child) {
+    text-align: right;
+}
+
+
+/* =========================
+   BILL ROW
+========================= */
+
+.billRow {
+    padding: 13px 0;
+
+    color: #555;
+    font-size: 16px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.billRow span:last-child {
+    color: #333;
+    font-weight: 700;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.billCard hr {
+    border: none;
+    border-top: 1px solid #ccc;
+
+    margin: 15px 0;
+}
+
+
+/* =========================
+   DISCOUNT
+========================= */
+
+.discount {
+    color: #16a34a !important;
+    font-weight: 700;
+}
+
+
+/* =========================
+   SERVICE CHARGE
+========================= */
+
+.serviceCharge {
+    color: #dc2626 !important;
+    font-weight: 700;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.billTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 18px;
+
+    color: #333;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.billTotal span:last-child {
+    color: #667eea;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.emptyState {
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.emptyIcon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f6fb;
+    border: 1px solid #e2e5ed;
+    border-radius: 50%;
+
+    color: #667eea;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.emptyState h3 {
+    margin: 0 0 7px;
+
+    color: #374151;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.emptyState p {
+    max-width: 430px;
+
+    margin: 0;
+
+    color: #8a94a6;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+    .billCard {
+        width: 100%;
+        padding: 22px;
+        overflow-x: auto;
+    }
+
+    .billCard h2 {
+        font-size: 26px;
+    }
+
+    .billHeader,
+    .billRow {
+        min-width: 430px;
+    }
+
+    .emptyState {
+        min-height: 180px;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .emptyState p {
+        max-width: 320px;
+    }
+}

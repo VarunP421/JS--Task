@@ -40,13 +40,13 @@ export default function billCalculate(
     const gstAmt = totalBill * 0.18;
 
     totalBill += gstAmt;
-    
+
     const retunVal = {
-        roomCharges:roomCharges,
-        discount:discount,
-        gstAmt:gstAmt,
+        roomCharges:roomCharges.toFixed(2),
+        discount:discount.toFixed(2),
+        gstAmt:gstAmt.toFixed(2),
         serviceCharge:serviceCharge,
-        totalBill:totalBill,
+        totalBill:totalBill.toFixed(2),
         stdRoomAmt:stdRoomAmt,
         delRoomAmt:delRoomAmt,
         suiteRoomAmt:suiteRoomAmt,

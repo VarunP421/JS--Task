@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import Bill from "../components/Bill";
-import BookingForm from "../components/BookingForm";
-import Header from "../components/Header";
+import Bill from "../../components/Bill/Bill";
+import BookingForm from "../../components/BookingForm/BookingForm";
+import Header from "../../components/Header/Header";
 import classes from "./Home.module.css";
-import validateBooking from "../utility/Validation";
-import { RoomDataCtx } from "../context/DataContext";
-import billCalculate from "../utility/billCalculator";
+import validateBooking from "../../utility/Validation";
+import { RoomDataCtx } from "../../context/DataContext";
+import billCalculate from "../../utility/billCalculator";
 
 export default function HomePage() {
     const { roomData, updateRoomAvailability } = useContext(RoomDataCtx);
