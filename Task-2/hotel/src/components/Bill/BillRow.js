@@ -1,4 +1,4 @@
-import styles from "./BillRow.module.css";
+import styles from './Bill.module.css'
 
 const BillRow = (props) => {
     return (

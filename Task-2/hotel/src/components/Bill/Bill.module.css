@@ -20,11 +20,6 @@
     font-weight: 700;
 }
 
-
-/* =========================
-   BILL HEADER
-========================= */
-
 .billHeader,
 .billRow {
     display: grid;
@@ -55,11 +50,6 @@
     text-align: right;
 }
 
-
-/* =========================
-   BILL ROW
-========================= */
-
 .billRow {
     padding: 13px 0;
 
@@ -74,11 +64,6 @@
     font-weight: 700;
 }
 
-
-/* =========================
-   DIVIDER
-========================= */
-
 .billCard hr {
     border: none;
     border-top: 1px solid #ccc;
@@ -86,30 +71,15 @@
     margin: 15px 0;
 }
 
-
-/* =========================
-   DISCOUNT
-========================= */
-
 .discount {
     color: #16a34a !important;
     font-weight: 700;
 }
 
-
-/* =========================
-   SERVICE CHARGE
-========================= */
-
 .serviceCharge {
     color: #dc2626 !important;
     font-weight: 700;
 }
-
-
-/* =========================
-   TOTAL
-========================= */
 
 .billTotal {
     display: flex;
@@ -126,11 +96,6 @@
 .billTotal span:last-child {
     color: #667eea;
 }
-
-
-/* =========================
-   EMPTY STATE
-========================= */
 
 .emptyState {
     min-height: 180px;
@@ -181,11 +146,6 @@
     font-size: 14px;
     line-height: 1.6;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 700px) {
     .billCard {

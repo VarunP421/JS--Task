@@ -1,5 +1,6 @@
 import BillRow from "./BillRow";
 import styles from "./Bill.module.css";
+import BillSummary from "./BillSummary";
 
 const Bill = (props) => {
     const { data } = props;
@@ -9,9 +10,6 @@ const Bill = (props) => {
             <h2>Bill Summary</h2>
 
             {!data.flag ? (
-                /* =========================
-                   EMPTY STATE
-                ========================= */
                 <div className={styles.emptyState}>
                     <div className={styles.emptyIcon} aria-hidden="true">
                         <span>₹</span>
@@ -25,9 +23,6 @@ const Bill = (props) => {
                     </p>
                 </div>
             ) : (
-                /* =========================
-                   BILL CONTENT
-                ========================= */
                 <>
                     <div className={styles.billHeader}>
                         <span>Room</span>
@@ -67,57 +62,7 @@ const Bill = (props) => {
                         />
                     )}
 
-                    <hr />
-
-                    {/* Room Charges */}
-                    <div className={styles.billRow}>
-                        <span>Room Charges</span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span>₹{data.roomCharges}</span>
-                    </div>
-
-                    {/* Discount */}
-                    {data.discount > 0 && (
-                        <div className={styles.billRow}>
-                            <span>Discount</span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span className={styles.discount}>
-                                - ₹{data.discount}
-                            </span>
-                        </div>
-                    )}
-
-                    {/* Service Charge */}
-                    {data.serviceCharge && (
-                        <div className={styles.billRow}>
-                            <span>Service Charge</span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span className={styles.serviceCharge}>
-                                + ₹500.00
-                            </span>
-                        </div>
-                    )}
-
-                    {/* GST */}
-                    <div className={styles.billRow}>
-                        <span>GST</span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span>+ ₹{data.gstAmt}</span>
-                    </div>
-
-                    {/* Total */}
-                    <div className={styles.billTotal}>
-                        <span>Total Amount</span>
-                        <span>₹{data.totalBill}</span>
-                    </div>
+                    <BillSummary data={props.data}/>
                 </>
             )}
         </div>

@@ -1,4 +1,4 @@
-import styles from './BillHeader.module.css'
+import styles from './Bill.module.css'
 const BillHeader = () => {
     return (
         <div className={styles.billHeader}>
